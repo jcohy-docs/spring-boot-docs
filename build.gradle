@@ -1,0 +1,26 @@
+plugins {
+	id "com.jcohy.archives"
+}
+
+description = "Jcohy Docs"
+
+
+apply plugin: "com.jcohy.archives"
+
+configure(allprojects) { abjects ->
+
+	group = "com.jcohy.docs"
+	version = "3.0.0"
+
+    repositories {
+        maven { url = 'https://maven.aliyun.com/repository/central'}
+    }
+    configurations.all {
+        resolutionStrategy {
+            cacheChangingModulesFor 0, "minutes"
+            cacheDynamicVersionsFor 0, "minutes"
+        }
+    }
+}
+
+

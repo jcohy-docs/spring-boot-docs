@@ -1,0 +1,5 @@
+rootProject.name = "jcohy-docs-template"
+
+include 'docs-sample'
+
+include 'docs-sample2'
