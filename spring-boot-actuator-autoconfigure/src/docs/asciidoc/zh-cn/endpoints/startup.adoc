@@ -1,0 +1,39 @@
+[[startup]]
+= Application Startup (`startup`)
+
+`startup` 端点提供有关应用程序启动顺序的信息.
+
+
+[[startup.retrieving]]
+== 检索应用程序启动顺序
+应用程序启动步骤既可以作为快照检索（`GET`），也可以从缓冲区中提取（`POST`）。
+
+[[startup.retrieving.snapshot]]
+=== 检索应用程序启动步骤的快照
+要检索到目前为止在应用程序启动阶段记录的步骤，请向 `/actuator/startup` 发出 `GET` 请求，如以下基于 curl 的示例所示：
+
+include::snippets/startup-snapshot/curl-request.adoc[]
+
+生成的响应类似于以下内容：
+
+include::snippets/startup-snapshot/http-response.adoc[]
+
+[[startup.retrieving.drain]]
+=== Draining the Application Startup Steps
+
+要在应用程序启动阶段返回迄今为止记录的步骤， 请向 `/actuator/startup` 发出 `POST` 请求， 如下面基于 curl 的示例所示:
+
+include::snippets/startup/curl-request.adoc[]
+
+得到的响应类似于以下内容:
+
+include::snippets/startup/http-response.adoc[]
+
+[[startup.retrieving.response-structure]]
+=== 响应结构
+
+响应包含应用程序启动步骤的详细信息.
+下表描述了响应的结构:
+
+[cols="2,1,3"]
+include::snippets/startup/response-fields.adoc[]

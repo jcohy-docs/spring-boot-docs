@@ -1,5 +1,9 @@
-rootProject.name = "jcohy-docs-template"
+rootProject.name = "spring-boot"
 
-include 'docs-sample'
+include 'spring-boot'
 
-include 'docs-sample2'
+include 'spring-boot-actuator-autoconfigure'
+
+include 'spring-gradle-plugins'
+
+include 'spring-maven-plugins'

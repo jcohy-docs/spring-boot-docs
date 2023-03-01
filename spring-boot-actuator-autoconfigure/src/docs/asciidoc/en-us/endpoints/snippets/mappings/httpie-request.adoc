@@ -1,0 +1,7 @@
+[source,bash]
+----
+$ http GET 'http://localhost:63117/actuator/mappings' \
+    'accept-encoding:gzip' \
+    'user-agent:ReactorNetty/1.0.22' \
+    'accept:*/*'
+----

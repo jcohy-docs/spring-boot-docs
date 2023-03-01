@@ -1,0 +1,41 @@
+[[actuator.jmx]]
+== 通过 JMX 监控和管理
+Java 管理扩展 (Java Management Extensions,JMX) 提供了一种监控和管理应用程序的标准机制. 默认情况下,此功能未启用,可以通过将配置属性 `spring.jmx.enabled` 设置为 `true` 来启用.Spring Boot 将最合适的 `MBeanServer` 暴露为 ID 为 `mbeanServer` 的 bean。 使用 Spring JMX 注解（`@ManagedResource`、`@ManagedAttribute` 或 `@ManagedOperation`）注解的任何 bean 都会暴露给它。
+
+如果您的平台提供标准的 `MBeanServer`，Spring Boot 会使用它并在必要时默认使用 VM 的 `MBeanServer`。 如果这一切都失败了，则会创建一个新的 `MBeanServer``MBeanServer`。
+
+有关详细信息，请参阅 {spring-boot-autoconfigure-module-code}/jmx/JmxAutoConfiguration.java[`JmxAutoConfiguration`] 类。
+
+默认情况下,Spring Boot 将 management 端点暴露为 org.springframework.boot 域下的 JMX MBean.要完全控制 JMX 域中的端点注册，请考虑注册您自己的 `EndpointObjectNameFactory` 实现。
+
+[[actuator.jmx.custom-mbean-names]]
+=== 自定义 MBean 名称
+MBean 的名称通常是从端点的 `id` 生成的. 例如,`health` 端点暴露为 `org.springframework.boot:type=Endpoint,name=Health`.
+
+如果你的应用程序包含多个 Spring `ApplicationContext`,可能会发生名称冲突. 要解决此问题,可以将 `spring.jmx.unique-names` 属性设置为 `true`,以保证 MBean 名称始终唯一.
+
+你还可以自定义暴露端点的 JMX 域. 以下设置展示了在 `application.properties` 中执行此操作的示例:
+
+[source,yaml,indent=0,subs="verbatim",configprops,configblocks]
+----
+	spring:
+	  jmx:
+	    unique-names: true
+	management:
+	  endpoints:
+	    jmx:
+	      domain: "com.example.myapp"
+----
+
+[[actuator.jmx.disable-jmx-endpoints]]
+=== 禁用 JMX 端点
+如果你不想通过 JMX 暴露端点,可以将 `management.endpoints.jmx.exposure.exclude` 属性设置为 `*`,如下所示:
+
+[source,yaml,indent=0,subs="verbatim",configprops,configblocks]
+----
+	management:
+	  endpoints:
+	    jmx:
+	      exposure:
+	        exclude: "*"
+----

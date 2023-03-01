@@ -1,0 +1,79 @@
+= spring-boot
+
+== 构建源码
+
+=== 从源码构建
+
+Jcohy Docs 的源码可以使用 Gradle 的命令行构建。我们在项目中包含了 Gradle’s wrapper scripts (./gradlew 或 gradlew.bat)，这样您可以不用下载安装 Gradle 也可以在本地构建。
+
+Jcohy Plugins 是基于 JDK 17 编写的。您应该使用 HotSpot JVM JDK 17 或更高的版本构建.
+
+=== 构建参考文档
+
+项目的参考文档也在此项目中，每个项目的下面的 `src/docs/asciidoc`。我们使用 https://asciidoctor.org/docs/asciidoc-writers-guide/[Asciidoc]，您可以使用以下命令在本地构建文档：
+
+[indent=0]
+----
+$ ./gradlew asciidoc asciidocPdf -Dfile.encoding=UTF-8
+----
+
+[NOTE]
+====
+生成的 HTML , Api Doc 和 PDF 文档在每个项目的 `/build/docs/` 目录中对应的文件夹中。
+====
+
+=== 构建指定项目的文档
+
+==== 构建 html 文档（单页面）
+
+[indent=0]
+----
+$  ./gradlew clean :spring-boot:spring-boot:asciidoctor -Dfile.encoding=UTF-8
+----
+
+==== 构建 html 文档（多页面）
+
+[indent=0]
+----
+$ ./gradlew clean :spring-boot:spring-boot:asciidoctorMultipage -Dfile.encoding=UTF-8
+----
+
+==== 构建 pdf 文档
+
+[indent=0]
+----
+$ ./gradlew clean :spring-boot:spring-boot:asciidoctorPdf -Dfile.encoding=UTF-8
+----
+
+=== 构建聚合文档
+
+另外我们可以构建聚合文档，为每个应用了 `com.jcohy.docs` 插件的项目生成单页面,多页面,pdf 文档
+
+[source]
+----
+$ ./gradlew clean aggregatedAsciidoctor -Dfile.encoding=UTF-8
+----
+
+NOTE:: 此任务只能在根项目中执行，文件的输出根目录的 `build/refrence` 目录下
+
+=== 打包文档
+
+[source]
+----
+$ ./gradlew clean docsZip -Dfile.encoding=UTF-8
+----
+
+NOTE:: 此任务只能在根项目中执行,主要是将 `aggregatedAsciidoctor` 输出打包为压缩文件。文件的输出根目录的 `build/archive` 目录下
+
+=== 上传文档
+
+将根目录下的 `build/refrence` 目录下的文件上传至阿里云 OSS
+
+[source]
+----
+$ ./gradlew clean uploadOssFiles -Dfile.encoding=UTF-8
+----
+
+NOTE:: 此任务只能在根项目中执行
+
+NOTE:: 在 IDEA 的 powershell 窗口中， file.encoding 需要添加单引号

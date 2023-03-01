@@ -1,0 +1,48 @@
+[[web.spring-session]]
+== Spring Session
+Spring Boot 为各种数据存储提供 {spring-session}[Spring Session]  自动配置. 在构建 Servlet Web 应用程序时,可以自动配置以下存储:
+
+* Redis
+* JDBC
+* Hazelcast
+* MongoDB
+
+此外，{spring-boot-for-apache-geode}[Spring Boot for Apache Geode] 提供了 {spring-boot-for-apache-geode-docs}#geode-session[使用 Apache Geode 作为会话存储的自动配置 ]。
+
+Servlet 的自动配置取代了使用 `@Enable*HttpSession` 的需要.
+
+如果 classpath 上存在单个 Spring Session 模块，Spring Boot 将自动使用该存储实现。 如果您有多个实现，Spring Boot 将使用以下顺序来选择特定的实现：
+
+. Redis
+. JDBC
+. Hazelcast
+. MongoDB
+. 如果 Redis、JDBC、Hazelcast 和 MongoDB 都不可用，则我们不会配置 `SessionRepository`。
+
+构建响应式 Web 应用程序时,可以自动配置以下存储:
+
+* Redis
+* MongoDB
+
+reactive 的自动配置取代了使用 `@Enable*WebSession` 的需要.
+
+如果 classpath 上存在单个 Spring Session 模块,则 Spring Boot 会自动使用该存储实现.
+与 servlet 配置类似，如果您有多个实现，Spring Boot 将使用以下顺序来选择特定实现：
+
+. Redis
+. MongoDB
+. 如果 Redis 和 MongoDB 都不可用，则我们不会配置 `ReactiveSessionRepository`.
+
+每个 store 都有自己的额外设置. 例如,可以为 JDBC 存储定制表的名称,如下所示:
+
+[source,yaml,indent=0,subs="verbatim",configprops,configblocks]
+----
+	spring:
+	  session:
+	    jdbc:
+	      table-name: "SESSIONS"
+----
+
+可以使用 `spring.session.timeout` 属性来设置会话的超时时间. 如果未在 Servlet web application 设置该属性,则自动配置将使用 `server.servlet.session.timeout` 的值.
+
+您可以使用 `@Enable*HttpSession` (Servlet) 或 `@Enable*WebSession`  (Reactive) 来控制 Spring Session 的配置. 这将导致自动配置退出. 然后,可以使用注解的属性而不是先前描述的配置属性来配置 Spring Session.

@@ -1,0 +1,123 @@
+[[appendix.application-properties.transaction]]
+== Transaction Properties
+[cols="4,3,3", options="header"]
+|===
+|Name|Description|Default Value
+
+|[[application-properties.transaction.spring.jta.atomikos.connectionfactory.borrow-connection-timeout]]<<application-properties.transaction.spring.jta.atomikos.connectionfactory.borrow-connection-timeout,`+spring.jta.atomikos.connectionfactory.borrow-connection-timeout+`>>
+|+++Timeout, in seconds, for borrowing connections from the pool.+++
+|`+30+`
+
+|[[application-properties.transaction.spring.jta.atomikos.connectionfactory.ignore-session-transacted-flag]]<<application-properties.transaction.spring.jta.atomikos.connectionfactory.ignore-session-transacted-flag,`+spring.jta.atomikos.connectionfactory.ignore-session-transacted-flag+`>>
+|+++Whether to ignore the transacted flag when creating session.+++
+|`+true+`
+
+|[[application-properties.transaction.spring.jta.atomikos.connectionfactory.local-transaction-mode]]<<application-properties.transaction.spring.jta.atomikos.connectionfactory.local-transaction-mode,`+spring.jta.atomikos.connectionfactory.local-transaction-mode+`>>
+|+++Whether local transactions are desired.+++
+|`+false+`
+
+|[[application-properties.transaction.spring.jta.atomikos.connectionfactory.maintenance-interval]]<<application-properties.transaction.spring.jta.atomikos.connectionfactory.maintenance-interval,`+spring.jta.atomikos.connectionfactory.maintenance-interval+`>>
+|+++Time, in seconds, between runs of the pool's maintenance thread.+++
+|`+60+`
+
+|[[application-properties.transaction.spring.jta.atomikos.connectionfactory.max-idle-time]]<<application-properties.transaction.spring.jta.atomikos.connectionfactory.max-idle-time,`+spring.jta.atomikos.connectionfactory.max-idle-time+`>>
+|+++Time, in seconds, after which connections are cleaned up from the pool.+++
+|`+60+`
+
+|[[application-properties.transaction.spring.jta.atomikos.connectionfactory.max-lifetime]]<<application-properties.transaction.spring.jta.atomikos.connectionfactory.max-lifetime,`+spring.jta.atomikos.connectionfactory.max-lifetime+`>>
+|+++Time, in seconds, that a connection can be pooled for before being destroyed. 0 denotes no limit.+++
+|`+0+`
+
+|[[application-properties.transaction.spring.jta.atomikos.connectionfactory.max-pool-size]]<<application-properties.transaction.spring.jta.atomikos.connectionfactory.max-pool-size,`+spring.jta.atomikos.connectionfactory.max-pool-size+`>>
+|+++Maximum size of the pool.+++
+|`+1+`
+
+|[[application-properties.transaction.spring.jta.atomikos.connectionfactory.min-pool-size]]<<application-properties.transaction.spring.jta.atomikos.connectionfactory.min-pool-size,`+spring.jta.atomikos.connectionfactory.min-pool-size+`>>
+|+++Minimum size of the pool.+++
+|`+1+`
+
+|[[application-properties.transaction.spring.jta.atomikos.connectionfactory.reap-timeout]]<<application-properties.transaction.spring.jta.atomikos.connectionfactory.reap-timeout,`+spring.jta.atomikos.connectionfactory.reap-timeout+`>>
+|+++Reap timeout, in seconds, for borrowed connections. 0 denotes no limit.+++
+|`+0+`
+
+|[[application-properties.transaction.spring.jta.atomikos.connectionfactory.unique-resource-name]]<<application-properties.transaction.spring.jta.atomikos.connectionfactory.unique-resource-name,`+spring.jta.atomikos.connectionfactory.unique-resource-name+`>>
+|+++Unique name used to identify the resource during recovery.+++
+|`+jmsConnectionFactory+`
+
+|[[application-properties.transaction.spring.jta.atomikos.connectionfactory.xa-connection-factory-class-name]]<<application-properties.transaction.spring.jta.atomikos.connectionfactory.xa-connection-factory-class-name,`+spring.jta.atomikos.connectionfactory.xa-connection-factory-class-name+`>>
+|+++Vendor-specific implementation of XAConnectionFactory.+++
+|
+
+|[[application-properties.transaction.spring.jta.atomikos.connectionfactory.xa-properties]]<<application-properties.transaction.spring.jta.atomikos.connectionfactory.xa-properties,`+spring.jta.atomikos.connectionfactory.xa-properties+`>>
+|+++Vendor-specific XA properties.+++
+|
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.borrow-connection-timeout]]<<application-properties.transaction.spring.jta.atomikos.datasource.borrow-connection-timeout,`+spring.jta.atomikos.datasource.borrow-connection-timeout+`>>
+|+++Timeout, in seconds, for borrowing connections from the pool.+++
+|`+30+`
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.concurrent-connection-validation]]<<application-properties.transaction.spring.jta.atomikos.datasource.concurrent-connection-validation,`+spring.jta.atomikos.datasource.concurrent-connection-validation+`>>
+|+++Whether to use concurrent connection validation.+++
+|`+true+`
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.default-isolation-level]]<<application-properties.transaction.spring.jta.atomikos.datasource.default-isolation-level,`+spring.jta.atomikos.datasource.default-isolation-level+`>>
+|+++Default isolation level of connections provided by the pool.+++
+|
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.login-timeout]]<<application-properties.transaction.spring.jta.atomikos.datasource.login-timeout,`+spring.jta.atomikos.datasource.login-timeout+`>>
+|+++Timeout, in seconds, for establishing a database connection.+++
+|`+0+`
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.maintenance-interval]]<<application-properties.transaction.spring.jta.atomikos.datasource.maintenance-interval,`+spring.jta.atomikos.datasource.maintenance-interval+`>>
+|+++Time, in seconds, between runs of the pool's maintenance thread.+++
+|`+60+`
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.max-idle-time]]<<application-properties.transaction.spring.jta.atomikos.datasource.max-idle-time,`+spring.jta.atomikos.datasource.max-idle-time+`>>
+|+++Time, in seconds, after which connections are cleaned up from the pool.+++
+|`+60+`
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.max-lifetime]]<<application-properties.transaction.spring.jta.atomikos.datasource.max-lifetime,`+spring.jta.atomikos.datasource.max-lifetime+`>>
+|+++Time, in seconds, that a connection can be pooled for before being destroyed. 0 denotes no limit.+++
+|`+0+`
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.max-pool-size]]<<application-properties.transaction.spring.jta.atomikos.datasource.max-pool-size,`+spring.jta.atomikos.datasource.max-pool-size+`>>
+|+++Maximum size of the pool.+++
+|`+1+`
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.min-pool-size]]<<application-properties.transaction.spring.jta.atomikos.datasource.min-pool-size,`+spring.jta.atomikos.datasource.min-pool-size+`>>
+|+++Minimum size of the pool.+++
+|`+1+`
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.reap-timeout]]<<application-properties.transaction.spring.jta.atomikos.datasource.reap-timeout,`+spring.jta.atomikos.datasource.reap-timeout+`>>
+|+++Reap timeout, in seconds, for borrowed connections. 0 denotes no limit.+++
+|`+0+`
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.test-query]]<<application-properties.transaction.spring.jta.atomikos.datasource.test-query,`+spring.jta.atomikos.datasource.test-query+`>>
+|+++SQL query or statement used to validate a connection before returning it.+++
+|
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.unique-resource-name]]<<application-properties.transaction.spring.jta.atomikos.datasource.unique-resource-name,`+spring.jta.atomikos.datasource.unique-resource-name+`>>
+|+++Unique name used to identify the resource during recovery.+++
+|`+dataSource+`
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.xa-data-source-class-name]]<<application-properties.transaction.spring.jta.atomikos.datasource.xa-data-source-class-name,`+spring.jta.atomikos.datasource.xa-data-source-class-name+`>>
+|+++Vendor-specific implementation of XAConnectionFactory.+++
+|
+
+|[[application-properties.transaction.spring.jta.atomikos.datasource.xa-properties]]<<application-properties.transaction.spring.jta.atomikos.datasource.xa-properties,`+spring.jta.atomikos.datasource.xa-properties+`>>
+|+++Vendor-specific XA properties.+++
+|
+
+|[[application-properties.transaction.spring.jta.enabled]]<<application-properties.transaction.spring.jta.enabled,`+spring.jta.enabled+`>>
+|+++Whether to enable JTA support.+++
+|`+true+`
+
+|[[application-properties.transaction.spring.transaction.default-timeout]]<<application-properties.transaction.spring.transaction.default-timeout,`+spring.transaction.default-timeout+`>>
+|+++Default transaction timeout. If a duration suffix is not specified, seconds will be used.+++
+|
+
+|[[application-properties.transaction.spring.transaction.rollback-on-commit-failure]]<<application-properties.transaction.spring.transaction.rollback-on-commit-failure,`+spring.transaction.rollback-on-commit-failure+`>>
+|+++Whether to roll back on commit failures.+++
+|
+
+|===

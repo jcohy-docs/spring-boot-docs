@@ -1,0 +1,24 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Disposition: inline;filename=f.txt
+Content-Type: application/vnd.spring-boot.actuator.v3+json
+Content-Length: 555
+
+{
+  "name" : "jvm.memory.max",
+  "description" : "The maximum amount of memory in bytes that can be used for memory management",
+  "baseUnit" : "bytes",
+  "measurements" : [ {
+    "statistic" : "VALUE",
+    "value" : 2.399141885E9
+  } ],
+  "availableTags" : [ {
+    "tag" : "area",
+    "values" : [ "heap", "nonheap" ]
+  }, {
+    "tag" : "id",
+    "values" : [ "CodeHeap 'profiled nmethods'", "G1 Old Gen", "CodeHeap 'non-profiled nmethods'", "G1 Survivor Space", "Compressed Class Space", "Metaspace", "G1 Eden Space", "CodeHeap 'non-nmethods'" ]
+  } ]
+}
+----

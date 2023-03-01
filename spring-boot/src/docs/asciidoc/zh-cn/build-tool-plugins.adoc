@@ -1,0 +1,16 @@
+[[build-tool-plugins]]
+= 构建工具插件
+include::attributes.adoc[]
+
+Spring Boot 为 Maven 和 Gradle 提供了构建工具插件.  插件提供了多种功能,包括可执行 jar 的打包.  本节提供了有关这两个插件的更多详细信息,以及在扩展不受支持的构建系统时所需的一些帮助.
+如果您刚刚入门,则可能需要先阅读 "`<<using#using.build-systems>>`" 部分中的 "`<<using#using>>`" .
+
+include::build-tool-plugins/maven.adoc[]
+
+include::build-tool-plugins/gradle.adoc[]
+
+include::build-tool-plugins/antlib.adoc[]
+
+include::build-tool-plugins/other-build-systems.adoc[]
+
+include::build-tool-plugins/whats-next.adoc[]

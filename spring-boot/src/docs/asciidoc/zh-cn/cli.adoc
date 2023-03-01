@@ -1,0 +1,9 @@
+[[cli]]
+= Spring Boot CLI
+include::attributes.adoc[]
+
+Spring 引导 CLI 是一个命令行工具，可用于从 https://start.spring.io 引导创建新项目或对密码进行编码。
+
+include::cli/installation.adoc[]
+
+include::cli/using-the-cli.adoc[]

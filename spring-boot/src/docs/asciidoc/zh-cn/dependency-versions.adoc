@@ -1,0 +1,10 @@
+[appendix]
+[[appendix.dependency-versions]]
+= 依赖版本
+include::attributes.adoc[]
+
+本附录提供了 Spring Boot 管理的依赖的详细信息.
+
+include::dependency-versions/coordinates.adoc[]
+
+include::dependency-versions/properties.adoc[]
