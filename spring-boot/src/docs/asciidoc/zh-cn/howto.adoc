@@ -1,0 +1,44 @@
+[[howto]]
+= "`How-to`" 指南
+include::attributes.adoc[]
+
+
+本节提供了一些在使用 Spring Boot 时经常出现的常见 '`how do I do that...`' 问题的答案. 它的覆盖范围不是很详尽,但是确实覆盖了很多.
+
+如果您有一个我们不在此讨论的特定问题,则可能需要查看 https://stackoverflow.com/tags/spring-boot[stackoverflow.com]  以查看是否有人已经提供了答案. 这也是询问新问题的好地方 (请使用 `spring-boot` 标签) .
+
+我们也很乐意扩展此部分. 如果您想添加 "操作方法",请向我们发送 {spring-boot-code}[pull request].
+
+include::howto/application.adoc[]
+
+include::howto/properties-and-configuration.adoc[]
+
+include::howto/webserver.adoc[]
+
+include::howto/spring-mvc.adoc[]
+
+include::howto/jersey.adoc[]
+
+include::howto/http-clients.adoc[]
+
+include::howto/logging.adoc[]
+
+include::howto/data-access.adoc[]
+
+include::howto/data-initialization.adoc[]
+
+include::howto/messaging.adoc[]
+
+include::howto/batch.adoc[]
+
+include::howto/actuator.adoc[]
+
+include::howto/security.adoc[]
+
+include::howto/hotswapping.adoc[]
+
+include::howto/testing.adoc[]
+
+include::howto/build.adoc[]
+
+include::howto/traditional-deployment.adoc[]

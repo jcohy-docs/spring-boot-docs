@@ -14,6 +14,7 @@ import org.asciidoctor.gradle.jvm.AbstractAsciidoctorTask;
 import org.asciidoctor.gradle.jvm.AsciidoctorJExtension;
 import org.asciidoctor.gradle.jvm.AsciidoctorJPlugin;
 import org.asciidoctor.gradle.jvm.AsciidoctorTask;
+import org.asciidoctor.gradle.jvm.pdf.AsciidoctorPdfTask;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.file.DuplicatesStrategy;
@@ -45,10 +46,14 @@ public class JcohyAsciidoctorPlugins implements Plugin<Project> {
     }
 
     private void createAsciidoctorMultiPageTask(Project project) {
-        project.getTasks().create("asciidoctorMultipage", AsciidoctorTask.class,asciidoctorTask -> {
-            asciidoctorTask.sources("*.adoc");
-            replaceLogo(project,asciidoctorTask);
-        });
+        if(project.getName().equals("spring-boot")) {
+            project.getTasks().create("asciidoctorMultipage", AsciidoctorTask.class,asciidoctorTask -> {
+                asciidoctorTask.sources("*.adoc");
+                replaceLogo(project,asciidoctorTask);
+            });
+
+        }
+        project.getTasks().findByName("asciidoctorPdf").setEnabled(false);
     }
 
     private void configureAsciidoctorTask(Project project, AbstractAsciidoctorTask asciidoctorTask) {
@@ -67,9 +72,17 @@ public class JcohyAsciidoctorPlugins implements Plugin<Project> {
     }
 
     private void configureCommonAttributes(Project project, AbstractAsciidoctorTask asciidoctorTask) {
-        Map<String, Object> attributes = new HashMap<>();
+        Map<String, Object> attributes = ProjectVersion.getAttributesMap();
+        attributes.put("spring-boot-xsd-version",getVersion());
+        Map<String, Object> docsUrlMaps = ProjectVersion.getDocsUrlMaps();
         addAsciidoctorTaskAttributes(project,attributes);
         asciidoctorTask.attributes(attributes);
+        asciidoctorTask.attributes(docsUrlMaps);
+    }
+
+    private String getVersion() {
+        String[] versionEl = ProjectVersion.SPRING_BOOT.getVersion().split("\\.");
+        return versionEl[0] + "." + versionEl[1];
     }
 
     private void addAsciidoctorTaskAttributes(Project project,Map<String, Object> attributes) {
@@ -80,6 +93,8 @@ public class JcohyAsciidoctorPlugins implements Plugin<Project> {
         attributes.put("doc-root","https://docs.jcohy.com");
         attributes.put("spring-docs-prefix","https://docs.spring.io/spring-framework/docs/");
         attributes.put("gh-samples-url","https://github.com/spring-projects/spring-security/master/");
+        attributes.put("native-build-tools-version","0.9.18");
+
     }
 
     private void replaceLogo(Project project, AbstractAsciidoctorTask asciidoctorTask) {

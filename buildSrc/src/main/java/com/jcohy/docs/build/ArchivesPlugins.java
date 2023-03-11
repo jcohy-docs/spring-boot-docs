@@ -6,6 +6,7 @@ import com.jcohy.oss.OssUploadPlugin;
 import com.jcohy.oss.OssUploadTask;
 import com.jcohy.oss.dsl.AliOssExtension;
 import org.asciidoctor.gradle.jvm.AbstractAsciidoctorTask;
+import org.asciidoctor.gradle.jvm.AsciidoctorTask;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.file.DuplicatesStrategy;
@@ -64,10 +65,11 @@ public class ArchivesPlugins implements Plugin<Project> {
 
     private void createAggregatedAsciidoctorTask(Project project) {
         project.getTasks().create("aggregatedAsciidoctor", Copy.class,(sync) -> {
+            sync.setGroup("documentation");
             sync.setDestinationDir(new File(project.getBuildDir().getPath() + "/reference"));
             project.afterEvaluate((p) -> {
                 project.subprojects((sub) -> {
-                    sync.dependsOn(sub.getTasks().withType(AbstractAsciidoctorTask.class));
+                    sync.dependsOn(sub.getTasks().withType(AsciidoctorTask.class));
                     sync.from(sub.getBuildDir() + "/docs/asciidocMultipage",(spec) -> {
                         spec.into(sub.getName() + "/" + sub.getVersion() + "/html5");
                     });

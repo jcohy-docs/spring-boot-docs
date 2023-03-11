@@ -1,0 +1,31 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/vnd.spring-boot.actuator.v3+json
+Content-Length: 765
+
+{
+  "sessions" : [ {
+    "id" : "8db9abcc-5848-4a00-9291-70bb22bd3f1e",
+    "attributeNames" : [ ],
+    "creationTime" : "2022-10-17T04:36:06.367002Z",
+    "lastAccessedTime" : "2022-10-17T06:35:54.367002Z",
+    "maxInactiveInterval" : 1800,
+    "expired" : false
+  }, {
+    "id" : "e1522e38-25df-4596-b3ad-180aa4a5e2a2",
+    "attributeNames" : [ ],
+    "creationTime" : "2022-10-16T18:36:06.366762Z",
+    "lastAccessedTime" : "2022-10-17T06:35:21.366767Z",
+    "maxInactiveInterval" : 1800,
+    "expired" : false
+  }, {
+    "id" : "4db5efcc-99cb-4d05-a52c-b49acfbb7ea9",
+    "attributeNames" : [ ],
+    "creationTime" : "2022-10-17T01:36:06.367Z",
+    "lastAccessedTime" : "2022-10-17T06:35:29.367Z",
+    "maxInactiveInterval" : 1800,
+    "expired" : false
+  } ]
+}
+----

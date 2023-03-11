@@ -1,0 +1,212 @@
+[source,options="nowrap"]
+----
+{
+  "threads" : [ {
+    "threadName" : "main",
+    "threadId" : 1,
+    "blockedTime" : -1,
+    "blockedCount" : 0,
+    "waitedTime" : -1,
+    "waitedCount" : 1,
+    "lockName" : "java.util.concurrent.CountDownLatch$Sync@48bb0ae4",
+    "lockOwnerId" : -1,
+    "daemon" : false,
+    "inNative" : false,
+    "suspended" : false,
+    "threadState" : "WAITING",
+    "priority" : 5,
+    "stackTrace" : [ {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "park",
+      "fileName" : "Unsafe.java",
+      "lineNumber" : -2,
+      "className" : "jdk.internal.misc.Unsafe",
+      "nativeMethod" : true
+    }, {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "park",
+      "fileName" : "LockSupport.java",
+      "lineNumber" : 194,
+      "className" : "java.util.concurrent.locks.LockSupport",
+      "nativeMethod" : false
+    }, {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "parkAndCheckInterrupt",
+      "fileName" : "AbstractQueuedSynchronizer.java",
+      "lineNumber" : 885,
+      "className" : "java.util.concurrent.locks.AbstractQueuedSynchronizer",
+      "nativeMethod" : false
+    }, {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "doAcquireSharedInterruptibly",
+      "fileName" : "AbstractQueuedSynchronizer.java",
+      "lineNumber" : 1039,
+      "className" : "java.util.concurrent.locks.AbstractQueuedSynchronizer",
+      "nativeMethod" : false
+    }, {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "acquireSharedInterruptibly",
+      "fileName" : "AbstractQueuedSynchronizer.java",
+      "lineNumber" : 1345,
+      "className" : "java.util.concurrent.locks.AbstractQueuedSynchronizer",
+      "nativeMethod" : false
+    }, {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "await",
+      "fileName" : "CountDownLatch.java",
+      "lineNumber" : 232,
+      "className" : "java.util.concurrent.CountDownLatch",
+      "nativeMethod" : false
+    }, {
+      "methodName" : "execute",
+      "fileName" : "TestWorker.java",
+      "lineNumber" : 73,
+      "className" : "org.gradle.api.internal.tasks.testing.worker.TestWorker",
+      "nativeMethod" : false
+    }, {
+      "methodName" : "execute",
+      "fileName" : "TestWorker.java",
+      "lineNumber" : 47,
+      "className" : "org.gradle.api.internal.tasks.testing.worker.TestWorker",
+      "nativeMethod" : false
+    }, {
+      "methodName" : "execute",
+      "fileName" : "ActionExecutionWorker.java",
+      "lineNumber" : 56,
+      "className" : "org.gradle.process.internal.worker.child.ActionExecutionWorker",
+      "nativeMethod" : false
+    }, {
+      "methodName" : "call",
+      "fileName" : "SystemApplicationClassLoaderWorker.java",
+      "lineNumber" : 133,
+      "className" : "org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker",
+      "nativeMethod" : false
+    }, {
+      "methodName" : "call",
+      "fileName" : "SystemApplicationClassLoaderWorker.java",
+      "lineNumber" : 71,
+      "className" : "org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "methodName" : "run",
+      "fileName" : "GradleWorkerMain.java",
+      "lineNumber" : 69,
+      "className" : "worker.org.gradle.process.internal.worker.GradleWorkerMain",
+      "nativeMethod" : false
+    }, {
+      "classLoaderName" : "app",
+      "methodName" : "main",
+      "fileName" : "GradleWorkerMain.java",
+      "lineNumber" : 74,
+      "className" : "worker.org.gradle.process.internal.worker.GradleWorkerMain",
+      "nativeMethod" : false
+    } ],
+    "lockedMonitors" : [ ],
+    "lockedSynchronizers" : [ ],
+    "lockInfo" : {
+      "className" : "java.util.concurrent.CountDownLatch$Sync",
+      "identityHashCode" : 1220217572
+    }
+  }, {
+    "threadName" : "Reference Handler",
+    "threadId" : 2,
+    "blockedTime" : -1,
+    "blockedCount" : 38,
+    "waitedTime" : -1,
+    "waitedCount" : 0,
+    "lockOwnerId" : -1,
+    "daemon" : true,
+    "inNative" : false,
+    "suspended" : false,
+    "threadState" : "RUNNABLE",
+    "priority" : 10,
+    "stackTrace" : [ {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "waitForReferencePendingList",
+      "fileName" : "Reference.java",
+      "lineNumber" : -2,
+      "className" : "java.lang.ref.Reference",
+      "nativeMethod" : true
+    }, {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "processPendingReferences",
+      "fileName" : "Reference.java",
+      "lineNumber" : 241,
+      "className" : "java.lang.ref.Reference",
+      "nativeMethod" : false
+    }, {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "run",
+      "fileName" : "Reference.java",
+      "lineNumber" : 213,
+      "className" : "java.lang.ref.Reference$ReferenceHandler",
+      "nativeMethod" : false
+    } ],
+    "lockedMonitors" : [ ],
+    "lockedSynchronizers" : [ ]
+  }, {
+    "threadName" : "Finalizer",
+    "threadId" : 3,
+    "blockedTime" : -1,
+    "blockedCount" : 92,
+    "waitedTime" : -1,
+    "waitedCount" : 87,
+    "lockName" : "java.lang.ref.ReferenceQueue$Lock@467cfd83",
+    "lockOwnerId" : -1,
+    "daemon" : true,
+    "inNative" : false,
+    "suspended" : false,
+    "threadState" : "WAITING",
+    "priority" : 8,
+    "stackTrace" : [ {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "wait",
+      "fileName" : "Object.java",
+      "lineNumber" : -2,
+      "className" : "java.lang.Object",
+      "nativeMethod" : true
+    }, {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "remove",
+      "fileName" : "ReferenceQueue.java",
+      "lineNumber" : 155,
+      "className" : "java.lang.ref.ReferenceQueue",
+      "nativeMethod" : false
+    }, {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "remove",
+      "fileName" : "ReferenceQueue.java",
+      "lineNumber" : 176,
+      "className" : "java.lang.ref.ReferenceQueue",
+      "nativeMethod" : false
+    }, {
+      "moduleName" : "java.base",
+      "moduleVersion" : "11.0.15",
+      "methodName" : "run",
+      "fileName" : "Finalizer.java",
+      "lineNumber" : 170,
+      "className" : "java.lang.ref.Finalizer$FinalizerThread",
+      "nativeMethod" : false
+    } ],
+    "lockedMonitors" : [ ],
+    "lockedSynchronizers" : [ ],
+    "lockInfo" : {
+      "className" : "java.lang.ref.ReferenceQueue$Lock",
+      "identityHashCode" : 1182596483
+    }
+  } ]
+}
+----
